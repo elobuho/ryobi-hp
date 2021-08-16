@@ -1,27 +1,56 @@
 :host {
   @apply block relative;
-  .old-prod {
-    @apply absolute inset-0;
-    ::ng-deep {
-      [oldprod] {
-        @apply absolute inset-0;
-      }
+  ::ng-deep {
+    [oldprod],
+    [newprod] {
+      @apply absolute inset-0;
       img {
         @apply absolute w-full h-full object-contain;
       }
     }
-  }
-  .new-prod {
-    @apply absolute inset-0;
-    ::ng-deep {
-      [newprod] {
-        @apply absolute inset-0;
+    [oldprod] {
+      img:not(.pop) {
+        @apply transition-all opacity-0 duration-300;
       }
+      img.pop {
+        @apply opacity-0;
+      }
+    }
+    [newprod] {
       img {
-        @apply absolute w-full h-full object-contain opacity-80;
+        @apply transition-all opacity-0 duration-1000;
+        transition-delay: 0ms;
       }
     }
   }
   &.intersecting {
+    ::ng-deep {
+      [oldprod] {
+        img:not(.pop) {
+          @apply opacity-100;
+        }
+        img.pop {
+          animation: flash 1000ms linear 300ms;
+        }
+      }
+      [newprod] {
+        img {
+          @apply opacity-100;
+          transition-delay: 1300ms;
+        }
+      }
+    }
+  }
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  66% {
+    opacity: 1;
+    animation-timing-function: ease-out;
   }
 }

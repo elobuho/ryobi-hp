@@ -20,7 +20,7 @@ import { Subscription } from 'rxjs';
     IntersectionObserverService,
     {
       provide: INTERSECTION_THRESHOLD,
-      useValue: 0.8,
+      useValue: 0.75,
     },
   ],
 })
