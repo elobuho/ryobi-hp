@@ -18,7 +18,7 @@
     }
     [newprod] {
       img {
-        @apply transition-all opacity-0 duration-1000;
+        @apply transition-all opacity-0 duration-300;
         transition-delay: 0ms;
       }
     }
@@ -35,7 +35,7 @@
       }
       [newprod] {
         img {
-          @apply opacity-100;
+          @apply opacity-100 duration-1000;
           transition-delay: 1300ms;
         }
       }
