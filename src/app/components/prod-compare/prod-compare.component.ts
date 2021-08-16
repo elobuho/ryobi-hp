@@ -4,7 +4,6 @@ import {
   Inject,
   OnDestroy,
   OnInit,
-  ViewEncapsulation,
 } from '@angular/core';
 import {
   IntersectionObserverService,

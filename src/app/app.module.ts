@@ -16,6 +16,7 @@ import { AboutHPComponent } from './components/about-hp/about-hp.component';
 import { LeadComponent } from './components/lead/lead.component';
 import { CompactComponent } from './components/compact/compact.component';
 import { ProdCompareComponent } from './components/prod-compare/prod-compare.component';
+import { MENU_ITEMS } from './menu/menu.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,15 @@ import { ProdCompareComponent } from './components/prod-compare/prod-compare.com
     IntersectionObserverModule,
     MenuModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MENU_ITEMS,
+      useValue: [
+        { href: '#about-hp', caption: 'About HP One+' },
+        { href: '#compact', caption: 'Compact design' },
+      ],
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

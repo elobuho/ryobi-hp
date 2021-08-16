@@ -4,10 +4,16 @@
   class="absolute inset-0 z-[99] bg-brand-bg"
 >
   <div class="container pt-16 pb-4">
-    <ul class="text-gray-400 text-lg -ml-4" (click)="onMenuItemClick($event)">
-      <li>
-        <a href="#test" class="block px-8 py-2 uppercase hover:text-gray-100"
-          >menu test</a
+    <ul
+      *ngIf="menu.menuItems"
+      class="text-gray-400 text-lg -ml-4"
+      (click)="onMenuItemClick($event)"
+    >
+      <li *ngFor="let item of menu.menuItems">
+        <a
+          href="{{ item.href }}"
+          class="block px-8 py-2 uppercase hover:text-gray-100"
+          >{{ item.caption }}</a
         >
       </li>
     </ul>
