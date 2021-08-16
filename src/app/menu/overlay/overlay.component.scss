@@ -1,0 +1,13 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  opacity: 0;
+  animation: 0.3s 0.3s fadeIn forwards;
+}

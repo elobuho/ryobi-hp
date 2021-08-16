@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  @apply bg-brand;
+}
+
+.cards-wrapper {
+  background-image: url("/assets/cross-fill-white.svg");
+  background-size: 160px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(6deg, #000, transparent 130%),
+      linear-gradient(0deg, #000 1%, transparent 150%);
+  }
+}
+
+.skew-card {
+  @apply relative px-12 py-8 text-gray-50 flex flex-col items-center justify-between;
+  flex: 1 0 0;
+  &::before {
+    content: "";
+    @apply block absolute inset-0 border-brand border bg-brand-bg;
+    transform: skewX(-7deg);
+  }
+  > * {
+    position: relative;
+  }
+  .title {
+    @apply text-2xl text-brand font-extrabold uppercase italic text-center translate-x-5;
+  }
+  .image {
+    @apply py-4;
+    img {
+      @apply mx-auto;
+    }
+  }
+  .desc {
+    @apply text-center self-end -translate-x-5;
+  }
+}

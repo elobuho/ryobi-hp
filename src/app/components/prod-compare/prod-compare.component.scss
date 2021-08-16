@@ -1,0 +1,27 @@
+:host {
+  @apply block relative;
+  .old-prod {
+    @apply absolute inset-0;
+    ::ng-deep {
+      [oldprod] {
+        @apply absolute inset-0;
+      }
+      img {
+        @apply absolute w-full h-full object-contain;
+      }
+    }
+  }
+  .new-prod {
+    @apply absolute inset-0;
+    ::ng-deep {
+      [newprod] {
+        @apply absolute inset-0;
+      }
+      img {
+        @apply absolute w-full h-full object-contain opacity-80;
+      }
+    }
+  }
+  &.intersecting {
+  }
+}

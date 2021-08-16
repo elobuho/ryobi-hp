@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  @apply bg-brand;
+  --clip-size: 4rem;
+}
+
+.clipped-left {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, var(--clip-size) 100%);
+  padding-left: var(--clip-size);
+}
+
+.clipped-right {
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--clip-size)) 100%, 0 100%);
+  padding-right: var(--clip-size);
+}

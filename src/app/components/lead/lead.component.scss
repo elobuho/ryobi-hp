@@ -1,0 +1,8 @@
+:host {
+  display: inline-block;
+  clip-path: polygon(2rem 0%, 100% 0%, calc(100% - 2rem) 100%, 0% 100%);
+  @apply uppercase font-black italic text-center text-3xl tablet:text-5xl px-8 tablet:px-24 py-2 bg-brand text-brand-bg;
+  &.inverted {
+    @apply bg-brand-bg text-gray-50;
+  }
+}

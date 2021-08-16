@@ -1,0 +1,45 @@
+a {
+  display: inline-block;
+  min-width: 52px;
+  padding-top: 78px;
+  position: relative;
+  // transition: all 2s ease-in-out;
+  color: #fff;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 78px;
+    background: transparent url("/assets/arrow-down.svg") no-repeat center 0px;
+    animation: scroll 1.5s infinite;
+    // transition: inherit;
+  }
+  // &:hover {
+  //   animation-duration: 3s;
+  //   &::before {
+  //     animation-duration: inherit;
+  //   }
+  // }
+}
+
+@keyframes scroll {
+  0%,
+  100% {
+    opacity: 1;
+    background-position-y: 0px;
+    animation-timing-function: ease-out;
+  }
+  30% {
+    opacity: 1;
+    background-position-y: 52px;
+    animation-timing-function: ease-in-out;
+  }
+  35% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.1;
+  }
+}

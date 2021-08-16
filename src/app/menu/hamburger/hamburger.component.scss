@@ -1,0 +1,24 @@
+#lines {
+  @apply stroke-current;
+  stroke-width: 10;
+  stroke-linecap: butt;
+  transition: all 0.3s ease;
+}
+
+button {
+  &.active {
+    #lines {
+      stroke: #fff;
+      #l2 {
+        opacity: 0;
+        transition-delay: 0s;
+        transition-duration: 0.3s;
+        @apply stroke-current;
+      }
+    }
+  }
+  #l2 {
+    transition-delay: 0.3s;
+    transition-duration: 1s;
+  }
+}

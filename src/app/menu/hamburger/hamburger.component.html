@@ -1,0 +1,86 @@
+<button
+  (click)="onMenuToggle()"
+  class="relative z-[100]"
+  [class.active]="menu.isMenuVisible$ | async"
+>
+  <svg
+    class="h-6"
+    viewBox="0 0 100 100"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="lines">
+      <line #l1 id="l1" x1="0" y1="20" x2="100" y2="20">
+        <animate
+          class="in"
+          attributeName="y1"
+          begin="indefinite"
+          dur="300ms"
+          to="0"
+          fill="freeze"
+        />
+        <animate
+          class="in"
+          attributeName="y2"
+          begin="indefinite"
+          dur="300ms"
+          to="100"
+          fill="freeze"
+        />
+
+        <animate
+          class="out"
+          attributeName="y1"
+          begin="indefinite"
+          dur="300ms"
+          to="20"
+          fill="freeze"
+        />
+        <animate
+          class="out"
+          attributeName="y2"
+          begin="indefinite"
+          dur="300ms"
+          to="20"
+          fill="freeze"
+        />
+      </line>
+      <line id="l2" x1="0" y1="50" x2="100" y2="50" />
+      <line #l3 id="l3" x1="0" y1="80" x2="100" y2="80">
+        <animate
+          class="in"
+          attributeName="y1"
+          begin="indefinite"
+          dur="300ms"
+          to="100"
+          fill="freeze"
+        />
+        <animate
+          class="in"
+          attributeName="y2"
+          begin="indefinite"
+          dur="300ms"
+          to="0"
+          fill="freeze"
+        />
+
+        <animate
+          class="out"
+          attributeName="y1"
+          begin="indefinite"
+          dur="300ms"
+          to="80"
+          fill="freeze"
+        />
+        <animate
+          class="out"
+          attributeName="y2"
+          begin="indefinite"
+          dur="300ms"
+          to="80"
+          fill="freeze"
+        />
+      </line>
+    </g>
+  </svg>
+</button>

@@ -1,0 +1,77 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --shiny-gradient: linear-gradient(
+      105deg,
+      #fff 20%,
+      #bbb 33%,
+      #fff 35%,
+      #aaa 62%,
+      #fff 65%,
+      #bbb 90%,
+      #fff 100%
+    );
+  }
+  * {
+    outline: none !important;
+  }
+  body {
+    min-width: 320px;
+    font-family: "Lato", sans-serif;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@keyframes shiny {
+  0% {
+    background-position: 0%;
+  }
+  30%,
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+.btn {
+  @apply inline-block px-8 py-4 leading-none uppercase relative overflow-hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 0;
+    padding-bottom: 200%;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    left: -200%;
+    top: 0;
+    transition: all 0.3s ease-out;
+  }
+  &:hover {
+    &:before {
+      transform: translate(75%, -25%);
+    }
+  }
+  &.btn-brand {
+    @apply bg-brand text-brand-bg-light;
+    &:hover {
+      @apply text-brand-bg;
+    }
+  }
+}
+
+.shiny {
+  background-image: var(--shiny-gradient);
+  background-clip: text;
+  background-size: 120%;
+  color: transparent;
+  animation: shiny 10s ease infinite alternate;
+}
