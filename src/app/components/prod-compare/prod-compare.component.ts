@@ -24,10 +24,10 @@ import { Subscription } from 'rxjs';
   ],
 })
 export class ProdCompareComponent implements OnInit, OnDestroy {
-  isIntersecting = false;
+  private isIntersecting = false;
   private entriesSub?: Subscription;
   @HostBinding('class')
-  get getIntersectingClass(): string {
+  get intersectingClass(): string {
     return this.isIntersecting ? 'intersecting' : '';
   }
 

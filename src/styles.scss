@@ -14,6 +14,7 @@
       #bbb 90%,
       #fff 100%
     );
+    --header-height: 3.5rem;
   }
   * {
     outline: none !important;
@@ -21,6 +22,20 @@
   body {
     min-width: 320px;
     font-family: "Lato", sans-serif;
+    app-header {
+    }
+    &.sticky-header {
+      padding-top: var(--header-height);
+      app-header {
+        @apply fixed w-full z-[99];
+        top: calc(-1 * var(--header-height));
+        transform: translateY(var(--header-height));
+        transition: transform 300ms;
+      }
+    }
+    #logo {
+      height: var(--header-height);
+    }
   }
   img {
     max-width: 100%;
