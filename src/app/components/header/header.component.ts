@@ -10,7 +10,8 @@ import {
 } from '@angular/core';
 import { WINDOW } from '@ng-web-apis/common';
 import { BehaviorSubject, fromEvent, Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, tap } from 'rxjs/operators';
+import { MenuService } from 'src/app/menu/menu.service';
 
 @Component({
   selector: 'app-header',
@@ -18,54 +19,65 @@ import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements AfterViewInit, OnDestroy {
-  fixedClass = 'sticky-header';
+  private fixedClass = 'sticky-header';
   private scrollSub?: Subscription;
   private scrollYbefore = 0;
-  private fixed$ = new BehaviorSubject(false);
-  private fixedSub?: Subscription;
+
+  private overlayClass = 'overlay';
+  private overlaySub?: Subscription;
 
   constructor(
     @Inject(DOCUMENT) readonly documentRef: Document,
     @Inject(WINDOW) readonly windowRef: Window,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    public menu: MenuService
   ) {}
 
   ngAfterViewInit(): void {
     this.scrollSub = fromEvent(this.documentRef, 'scroll')
       .pipe(
         debounceTime(500),
-        tap((ev) => {
-          const scrollYbefore = this.scrollYbefore;
-          this.scrollYbefore = this.windowRef.scrollY;
+        // Check if header should be fixed, return boolean
+        map(() => {
           // On top
           if (this.windowRef.scrollY < this.windowRef.innerHeight) {
-            this.fixed$.next(false);
-            return;
+            return false;
           }
-
           // Detect scroll up
-          if (this.windowRef.scrollY < scrollYbefore) {
-            this.fixed$.next(true);
+          if (this.windowRef.scrollY < this.scrollYbefore) {
+            return true;
           } else {
-            this.fixed$.next(false);
+            return false;
+          }
+        }),
+        // Save current scroll position for later checks
+        tap(() => {
+          this.scrollYbefore = this.windowRef.scrollY;
+        }),
+        // Do nothing if status didn't change
+        distinctUntilChanged(),
+        // Switch css class
+        tap((isFixed) => {
+          if (isFixed) {
+            this.renderer.addClass(this.documentRef.body, this.fixedClass);
+          } else {
+            this.renderer.removeClass(this.documentRef.body, this.fixedClass);
           }
         })
       )
       .subscribe();
 
-    this.fixedSub = this.fixed$
-      .pipe(distinctUntilChanged())
-      .subscribe((isFixed) => {
-        if (isFixed) {
-          this.renderer.addClass(this.documentRef.body, this.fixedClass);
-        } else {
-          this.renderer.removeClass(this.documentRef.body, this.fixedClass);
-        }
-      });
+    this.overlaySub = this.menu.isMenuVisible$.subscribe((isMenuVisible) => {
+      if (isMenuVisible) {
+        this.renderer.addClass(this.documentRef.body, this.overlayClass);
+      } else {
+        this.renderer.removeClass(this.documentRef.body, this.overlayClass);
+      }
+    });
   }
 
   ngOnDestroy(): void {
     this.scrollSub?.unsubscribe();
-    this.fixedSub?.unsubscribe();
+    this.overlaySub?.unsubscribe();
   }
 }

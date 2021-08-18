@@ -22,12 +22,10 @@
   body {
     min-width: 320px;
     font-family: "Lato", sans-serif;
-    app-header {
-    }
     &.sticky-header {
       padding-top: var(--header-height);
       app-header {
-        @apply fixed w-full z-[99];
+        @apply fixed w-full z-[100];
         top: calc(-1 * var(--header-height));
         transform: translateY(var(--header-height));
         transition: transform 300ms;
@@ -35,6 +33,15 @@
     }
     #logo {
       height: var(--header-height);
+    }
+    &.overlay {
+      overflow: hidden;
+      app-header {
+        background-color: transparent;
+        #logo {
+          opacity: 0;
+        }
+      }
     }
   }
   img {
