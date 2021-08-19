@@ -17,6 +17,7 @@ import { LeadComponent } from './components/lead/lead.component';
 import { CompactComponent } from './components/compact/compact.component';
 import { ProdCompareComponent } from './components/prod-compare/prod-compare.component';
 import { MENU_ITEMS } from './menu/menu.service';
+import { BatteriesComponent } from './components/batteries/batteries.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MENU_ITEMS } from './menu/menu.service';
     LeadComponent,
     CompactComponent,
     ProdCompareComponent,
+    BatteriesComponent,
   ],
   imports: [
     BrowserModule,

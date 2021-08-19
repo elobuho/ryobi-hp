@@ -1,0 +1,15 @@
+<svg width="960" height="480" viewBox="0 0 960 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="subtract-shape" clip-path="url(#clip0)">
+<rect id="Fade" x="-29" y="406.929" width="1143" height="497" transform="rotate(-20 -29 406.929)" fill="url(#paint0_linear)"/>
+<path id="Subtract" d="M273.182 296.944L741.055 126.652L732.255 198.323L781.882 204.417L793.787 107.459L798.577 105.716L893.323 117.349L899.251 69.0733L1045.07 16L1215.05 483.027L140.984 873.956L-29 406.929L118.407 353.277L214.442 365.069L202.255 464.323L251.882 470.417L264.069 371.162L363.323 383.349L369.417 333.722L270.162 321.535L273.182 296.944Z" fill="#2a2a27"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="542.5" y1="406.929" x2="542.5" y2="903.929" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0"/>
+<stop offset="0.572917"/>
+</linearGradient>
+<clipPath id="clip0">
+<rect width="960" height="480" fill="white"/>
+</clipPath>
+</defs>
+</svg>

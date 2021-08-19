@@ -21,8 +21,17 @@
     clipped-left
   "
 >
-  <div class="container flex flex-1 flex-col tablet:flex-row">
-    <app-prod-compare class="h-[33vh] mb-8">
+  <div class="container flex flex-col tablet:flex-row">
+    <app-prod-compare
+      class="
+        tablet:flex-1
+        h-[33vh]
+        tablet:h-[25vh]
+        laptop:h-[33vh]
+        mb-8
+        tablet:mb-0 tablet:mr-16
+      "
+    >
       <div oldProd>
         <img src="/assets/drill-outline.png" alt="" />
         <img class="pop" src="/assets/drill-outline-pop.png" alt="" />
@@ -31,11 +40,18 @@
         <img src="/assets/drill.png" alt="Wiertarko-Wkrętarka Udarowa" />
       </div>
     </app-prod-compare>
-    <div class="desc text-gray-50">
+    <div
+      class="
+        tablet:flex-1
+        text-gray-50
+        flex flex-col flex-nowrap
+        justify-center
+      "
+    >
       <h3 class="text-brand text-3xl font-extrabold uppercase italic">
         Wiertarko-Wkrętarka Udarowa
       </h3>
-      <p class="text-brand font-bold">RDD18C</p>
+      <p class="text-brand font-bold py-4">RDD18C</p>
       <p>
         Kompaktowa bez uszczerbku dla mocy, możesz operować w trudno dostępnych
         miejscach i pracować dłużej nad głową, dzięki naszej najlżejszej
@@ -48,8 +64,17 @@
 <div
   class="bg-brand-bg-light py-8 mr-8 tablet:mr-12 laptop:mr-24 clipped-right"
 >
-  <div class="container flex flex-1 flex-col tablet:flex-row">
-    <app-prod-compare class="h-[33vh] mb-8">
+  <div class="container flex flex-col tablet:flex-row">
+    <app-prod-compare
+      class="
+        tablet:flex-1
+        h-[25vh]
+        tablet:h-[20vh]
+        laptop:h-[25vh]
+        mb-8
+        tablet:mb-0 tablet:ml-16 tablet:order-2
+      "
+    >
       <div oldProd>
         <img src="/assets/saw-outline.png" alt="" />
         <img class="pop" src="/assets/saw-outline-pop.png" alt="" />
@@ -58,17 +83,25 @@
         <img src="/assets/saw.png" alt="" />
       </div>
     </app-prod-compare>
-    <div class="desc text-gray-50">
+    <div
+      class="
+        tablet:flex-1
+        text-gray-50
+        tablet:order-1
+        flex flex-col flex-nowrap
+        justify-center
+      "
+    >
       <h3 class="text-brand text-3xl font-extrabold uppercase italic">
-        Wiertarko-Wkrętarka Udarowa
+        Pilarka Szablasta
       </h3>
-      <p class="text-brand font-bold">RDD18C</p>
+      <p class="text-brand font-bold py-4">RRS18C</p>
       <p>
-        Kompaktowa bez uszczerbku dla mocy, możesz operować w trudno dostępnych
-        miejscach i pracować dłużej nad głową, dzięki naszej najlżejszej
-        wiertarko-wkrętarce z udarem.
+        Zaprojektowane specjalnie do pracy jedną ręką, to niezwykle kompaktowe
+        narzędzie może być łatwo używane nad głową i trudno dostępnych
+        miejscach, jednocześnie przy zachowaniu pełnej kontroli nad pilarką.
       </p>
-      <p>(W porównaniu do modelu R18DD7)</p>
+      <p>(W porównaniu do modelu R18RS7)</p>
     </div>
   </div>
 </div>

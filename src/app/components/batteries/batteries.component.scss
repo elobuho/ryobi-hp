@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  height: 48rem;
+
+  @apply bg-brand;
+  background-repeat: no-repeat;
+  background-image: url("/assets/subtract-bg.svg");
+  background-position: 0% 100%;
+  background-size: contain;
+}
