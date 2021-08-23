@@ -1,10 +1,44 @@
-:host {
-  display: block;
-  height: 48rem;
+@import "src/sass-vars";
 
-  @apply bg-brand;
+:host {
+  @apply bg-brand flex flex-col laptop:flex-row;
+  --clip-size: 4rem;
+}
+
+.desc-wrapper {
+  @apply relative;
+  @media (min-width: $breakpoint-laptop) {
+    &::after {
+      @apply block absolute top-0 bottom-0 left-full bg-brand-bg-light;
+      content: "";
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        calc(100% - var(--clip-size)) 100%,
+        0 100%
+      );
+      padding-right: var(--clip-size);
+    }
+  }
+  @media (min-width: $breakpoint-desktop) {
+    .container {
+      max-width: 720px;
+      margin-right: 0;
+    }
+  }
+}
+
+.battery-wrapper {
   background-repeat: no-repeat;
   background-image: url("/assets/subtract-bg.svg");
-  background-position: 0% 100%;
+  background-position: 0% 102%;
   background-size: contain;
+  @media (min-width: $breakpoint-desktop) {
+    background-size: cover;
+    background-position: 0% 95%;
+    .container {
+      max-width: 720px;
+      margin-left: 0;
+    }
+  }
 }

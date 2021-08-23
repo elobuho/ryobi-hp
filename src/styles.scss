@@ -1,9 +1,13 @@
+@import "sass-vars";
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 @layer base {
   :root {
+    --breakpoint-tablet: 640px;
+    --breakpoint-laptop: 1024px;
+    --breakpoint-desktop: 1920px;
     --shiny-gradient: linear-gradient(
       105deg,
       #fff 20%,
@@ -15,6 +19,9 @@
       #fff 100%
     );
     --header-height: 3.5rem;
+    .container {
+      overflow: hidden;
+    }
   }
   * {
     outline: none !important;
