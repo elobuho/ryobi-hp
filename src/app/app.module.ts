@@ -19,6 +19,7 @@ import { ProdCompareComponent } from './components/prod-compare/prod-compare.com
 import { MENU_ITEMS } from './menu/menu.service';
 import { BatteriesComponent } from './components/batteries/batteries.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SocialLinkDirective } from './directives/social-link.directive';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ProdCompareComponent,
     BatteriesComponent,
     FooterComponent,
+    SocialLinkDirective,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,7 @@ import { FooterComponent } from './components/footer/footer.component';
       useValue: [
         { href: '#about-hp', caption: 'About HP One+' },
         { href: '#compact', caption: 'Compact design' },
+        { href: '#batteries', caption: 'Batteries' },
       ],
     },
   ],

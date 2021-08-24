@@ -44,7 +44,8 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
             return false;
           }
           // Detect scroll up
-          if (this.windowRef.scrollY < this.scrollYbefore) {
+          // Add some margin for content jumping on overlay display
+          if (this.windowRef.scrollY < this.scrollYbefore + 50) {
             return true;
           } else {
             return false;

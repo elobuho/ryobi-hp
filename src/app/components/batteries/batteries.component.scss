@@ -11,6 +11,7 @@
     &::after {
       @apply block absolute top-0 bottom-0 left-full bg-brand-bg-light;
       content: "";
+      --clip-size: 4rem;
       clip-path: polygon(
         0 0,
         100% 0,
