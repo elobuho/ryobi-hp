@@ -20,6 +20,7 @@ import { MENU_ITEMS } from './menu/menu.service';
 import { BatteriesComponent } from './components/batteries/batteries.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SocialLinkDirective } from './directives/social-link.directive';
+import { BottomCtaComponent } from './components/bottom-cta/bottom-cta.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SocialLinkDirective } from './directives/social-link.directive';
     BatteriesComponent,
     FooterComponent,
     SocialLinkDirective,
+    BottomCtaComponent,
   ],
   imports: [
     BrowserModule,
