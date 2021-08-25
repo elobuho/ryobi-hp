@@ -21,6 +21,8 @@ import { BatteriesComponent } from './components/batteries/batteries.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SocialLinkDirective } from './directives/social-link.directive';
 import { BottomCtaComponent } from './components/bottom-cta/bottom-cta.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,12 @@ import { BottomCtaComponent } from './components/bottom-cta/bottom-cta.component
     AppRoutingModule,
     IntersectionObserverModule,
     MenuModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [
     {
