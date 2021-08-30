@@ -1,0 +1,8 @@
+runtime: nodejs14
+
+handlers:
+  - url: /
+    static_files: dist/brand/index.html
+    upload: dist/brand/index.html
+  - url: /
+    static_dir: dist/brand
