@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "http-server ./dist/brand",
     "build": "ng build",
+    "build-ghpages": "ng build --base-href /ryobi-hp-static/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
