@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "http-server ./dist/brand",
+    "start": "http-server -c-1 ./dist/brand",
     "build": "ng build",
     "build-ghpages": "ng build --base-href /ryobi-hp-static/",
     "watch": "ng build --watch --configuration development",
