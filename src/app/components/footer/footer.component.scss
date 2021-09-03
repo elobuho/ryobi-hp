@@ -1,7 +1,9 @@
+@import "/src/vars";
+
 :host {
   display: block;
   @apply bg-brand-bg-light pt-24 pb-12;
-  background-image: url("../../../assets/logo2.svg");
+  background-image: url("#{$base-href}/assets/logo2.svg");
   background-position: 100% 100%;
   background-repeat: no-repeat;
 }

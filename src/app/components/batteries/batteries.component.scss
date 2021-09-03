@@ -1,4 +1,4 @@
-@import "src/sass-vars";
+@import "src/vars";
 
 :host {
   @apply bg-brand flex flex-col laptop:flex-row;
@@ -31,7 +31,7 @@
 
 .battery-wrapper {
   background-repeat: no-repeat;
-  background-image: url("../../../assets/subtract-bg.svg");
+  background-image: url("#{$base-href}/assets/subtract-bg.svg");
   background-position: 0% 102%;
   background-size: contain;
   @media (min-width: $breakpoint-desktop) {

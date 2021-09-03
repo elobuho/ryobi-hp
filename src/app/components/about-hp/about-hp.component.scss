@@ -1,10 +1,12 @@
+@import "/src/vars";
+
 :host {
   display: block;
   @apply bg-brand;
 }
 
 .cards-wrapper {
-  background-image: url("../../../assets/cross-fill-white.svg");
+  background-image: url("#{$base-href}/assets/cross-fill-white.svg");
   background-size: 160px;
   position: relative;
   &::before {
