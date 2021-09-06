@@ -11,6 +11,7 @@ I have done it on my own, just for the demonstration purpose, as this manufactur
 ## rxjs - stream from event processing
 
 On scroll down header should be hidden, but scrolling up should bring the header down to your finger/pointer, with an exception to the above-the-fold region where it's easily reachable anyway.
+
 ![Show header based on scroll direction](blob/rxjs-header.gif)
 
     this.scrollSub = fromEvent(this.documentRef, 'scroll')
@@ -121,6 +122,7 @@ Honorable mention - as javascript events propagate up the DOM tree by default, a
 ## Social links directive
 
 While creating a component for social links could be an overkill, I found a directive useful here. It adds some otherwise repeatable attributes, adds a css class on click and holds redirection until the css animation completes.
+
 ![Animated social links](blob/social-links-directive.gif)
 
     export class SocialLinkDirective {
@@ -144,6 +146,7 @@ While creating a component for social links could be an overkill, I found a dire
 ## Read More Arrow component
 
 ![Content projection](blob/more-arrow.gif)
+
 For the Read More component I decided to do the opposite and wrap any given content into a link with some fancy animated arrow on top. Of course, more config options could be provided using @Input decorator, like an arrow direction, etc.
 In this approach, any content inside component's selector gets projected by replacing an ng-content selector.
 
