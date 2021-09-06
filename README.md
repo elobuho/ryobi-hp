@@ -144,7 +144,22 @@ While creating a component for social links could be an overkill, I found a dire
 ## Read More Arrow component
 
 ![Content projection](blob/more-arrow.gif)
-For the Read More component I decided to do the opposite and wrap any given content into a link with some fancy animated arrow on top. Of course, more config options could be provided using @Input decorator, like arrow's direction, etc.
-In this approach, any content inside component's selector gets projected where ng-content selector is.
+For the Read More component I decided to do the opposite and wrap any given content into a link with some fancy animated arrow on top. Of course, more config options could be provided using @Input decorator, like an arrow direction, etc.
+In this approach, any content inside component's selector gets projected by replacing an ng-content selector.
 
     <a href="{{ target }}" (click)="onClick($event)"><ng-content></ng-content></a>
+
+## Annoying issue with assets path finally solved
+
+Do you know how to set assets' paths in styles? Well, there's only one answer - relative to the URL. But what if you will build a project with `--base-href` param set to something different than `/` ? - Paths will break and assets will not be available.
+To solve this issue I introduced one additional variable in my SCSS setup
+
+    $base-href: '/ryobi-hp-static';
+
+While it's still not perfect, as you need to adjust it per build, it works good-enough and is used like
+
+    background-image: url("#{$base-href}/assets/cross-fill-white.svg");
+
+## PWA support
+
+Since it's just few cli commands away, I have done it.
